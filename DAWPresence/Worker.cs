@@ -41,11 +41,21 @@ internal sealed class Worker : BackgroundService
 		IEnumerable<Daw?> regDawArray = registeredDaws as Daw[] ?? registeredDaws.ToArray();
 
 		foreach (Daw? r in regDawArray)
-			Console.WriteLine($"{r.DisplayName} has been registered");
+		{
+			if (r != null)
+			{
+							Console.WriteLine($"{r.DisplayName} has been registered");
+			}
+			else
+			{
+				Console.WriteLine("A null DAW instance was found in regDawArray");
+			}
+		}
+
 
 		while (!stoppingToken.IsCancellationRequested)
 		{
-			Daw? daw = regDawArray.FirstOrDefault(d => d.IsRunning);
+			Daw? daw = regDawArray.FirstOrDefault(d => d?.IsRunning == true);
 			Console.Clear();
 			if (daw is null)
 			{
