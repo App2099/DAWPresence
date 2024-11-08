@@ -3,11 +3,11 @@ using System.Text.RegularExpressions;
 
 namespace DAWPresence.DAWs;
 
-public partial class AbletonLive11Suite : Daw
+public partial class AbletonLive12Suite : Daw
 {
-	public AbletonLive11Suite()
+	public AbletonLive12Suite()
 	{
-		ProcessName = "Ableton Live 11 Suite";
+		ProcessName = "Ableton Live 12 Suite";
 		DisplayName = ProcessName;
 		ImageKey = "ableton";
 		ApplicationId = "1053952444859686983";
